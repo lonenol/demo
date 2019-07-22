@@ -1,0 +1,33 @@
+plugins {
+    id 'java'
+    id 'idea'
+}
+
+group 'com.lonenol.demo.rsocket'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+
+}
+
+
+dependencies {
+    compile( 'io.rsocket:rsocket-core:1.0.0-RC1')
+    compile( 'org.slf4j:slf4j-api:1.7.26')
+    compile( 'io.rsocket:rsocket-transport-netty:1.0.0-RC1')
+
+    compile group: 'ch.qos.logback', name: 'logback-classic', version: '1.2.3'
+    compile group: 'ch.qos.logback', name: 'logback-core', version: '1.2.3'
+
+    testImplementation('org.junit.jupiter:junit-jupiter:5.5.1')
+}
+
+test {
+    useJUnitPlatform()
+}
+
+
